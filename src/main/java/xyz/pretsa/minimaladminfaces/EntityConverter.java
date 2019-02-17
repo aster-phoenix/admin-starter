@@ -1,4 +1,4 @@
-package com.github.adminfaces.starter.infra.converter;
+package xyz.pretsa.minimaladminfaces;
 
 
 import javax.faces.component.UIComponent;

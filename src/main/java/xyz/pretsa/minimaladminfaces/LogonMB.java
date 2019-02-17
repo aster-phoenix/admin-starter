@@ -1,4 +1,4 @@
-package com.github.adminfaces.starter.infra.security;
+package xyz.pretsa.minimaladminfaces;
 
 import com.github.adminfaces.template.session.AdminSession;
 import org.omnifaces.util.Faces;
@@ -9,8 +9,9 @@ import javax.inject.Named;
 import java.io.IOException;
 import java.io.Serializable;
 
-import static com.github.adminfaces.starter.util.Utils.addDetailMessage;
+import static xyz.pretsa.minimaladminfaces.Utils.addDetailMessage;
 import com.github.adminfaces.template.config.AdminConfig;
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 /**
@@ -35,6 +36,12 @@ public class LogonMB extends AdminSession implements Serializable {
     private boolean remember;
     @Inject
     private AdminConfig adminConfig;
+    
+    @PostConstruct
+    public void alwaysLoggedOn() {
+        email = "aster@pretsa.xyz";
+        password = " password";
+    }
 
 
     public void login() throws IOException {
